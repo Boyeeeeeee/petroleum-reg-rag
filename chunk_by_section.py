@@ -1,20 +1,4 @@
-"""
-Split each document into chunks aligned to its own numbered legal units
-(Section for the PIA, Regulation for the NUPRC regulations), with Schedule
-paragraphs in the PIA treated as their own unit type so numbering never
-collides with Section numbers (Schedules restart at 1, 2, 3...).
 
-Key fixes vs. v1:
-- Robust start-of-operative-text detection: the "Commencement" marginal
-  note is sometimes dropped by text extraction (column-layout artifact),
-  so instead we find the *second* occurrence of a line starting "1." (the
-  first is the Arrangement/Table of Contents entry, the second is the
-  real Section/Regulation 1) and start collecting from there.
-- Schedule-aware: once a "<ORDINAL> SCHEDULE" heading is seen, subsequent
-  numbered paragraphs are tagged unit_type="Schedule Paragraph" with the
-  schedule name carried as context, instead of being mislabeled as
-  Section 1, 2, 3... again.
-"""
 import json
 import re
 from pathlib import Path

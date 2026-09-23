@@ -1,12 +1,4 @@
-"""
-BM25 sparse retrieval over the chunked petroleum-regulation corpus.
 
-This is the sparse half of the eventual hybrid (BM25 + dense) retriever.
-Dense embeddings need to be generated in an environment with Hugging Face
-access (Colab, as with the other projects) — this script stands alone so
-the retrieval logic, chunk formatting, and citation format are all decided
-and testable before the dense side exists.
-"""
 import json
 import re
 from pathlib import Path

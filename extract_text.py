@@ -1,7 +1,4 @@
-"""
-Extract text from each source PDF, page by page, and save as JSON.
-Keeping page numbers lets every chunk cite an exact page later.
-"""
+
 import json
 import pdfplumber
 from pathlib import Path
