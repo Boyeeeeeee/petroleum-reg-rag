@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+.pytest_cache/
 data/raw/*.pdf
 data/processed/*_pages.json
 .env

@@ -4,3 +4,5 @@ fastapi
 uvicorn[standard]
 groq
 python-dotenv
+pytest
+httpx
