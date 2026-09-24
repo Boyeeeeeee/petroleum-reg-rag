@@ -5,6 +5,9 @@ petroleum regulation: the Petroleum Industry Act 2021 plus three NUPRC
 regulations (Royalty, Gas Flaring/Venting/Methane, Decommissioning &
 Abandonment).
 
+## Live demo: https://petroleum-reg-rag.onrender.com/docs
+Free-tier hosting, so the first request after a period of inactivity can take about a minute to wake up. `/health` and `/query` are open; `/ask` (LLM answer synthesis) requires an `X-API-Key` header to protect the free Groq quota.
+
 ## Status
 - [x] PDF ingestion (`extract_text.py`)
 - [x] Section/regulation-aware chunking (`chunk_by_section.py`) — 478 chunks
@@ -15,7 +18,7 @@ Abandonment).
 - [ ] Dense embeddings + vector store (Colab — needs Hugging Face access)
 - [ ] Hybrid retrieval (BM25 + dense + rerank)
 - [ ] Tests + CI
-- [ ] Docker + deployment
+- [x] Docker + deployment
 
 ## Corpus
 | Document | Units |
