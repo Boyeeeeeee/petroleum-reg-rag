@@ -1,4 +1,3 @@
-
 import json
 import re
 from pathlib import Path
@@ -46,6 +45,7 @@ class BM25Retriever:
                 "doc_id": chunk["doc_id"],
                 "unit_number": chunk["unit_number"],
                 "text_preview": chunk["text"][:220].replace("\n", " "),
+                "text": chunk["text"],
             })
         return results
 

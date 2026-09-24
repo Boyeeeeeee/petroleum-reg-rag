@@ -15,34 +15,47 @@ load_dotenv()
 app = FastAPI(
     title="Petroleum Regulation RAG API",
     description="Retrieval over the Petroleum Industry Act 2021 and NUPRC regulations (Royalty, Gas Flaring, Decommissioning).",
-    version="0.1.0",
+    version="0.2.0",
 )
 
-# Loaded once at startup, not per-request.
+# ---------- Retriever (loaded once at startup, not per-request) ----------
+# RETRIEVER_MODE=hybrid (default): BM25 + dense embeddings fused with reciprocal rank fusion.
+# RETRIEVER_MODE=bm25: sparse-only fallback, e.g. if the host runs out of memory.
+RETRIEVER_MODE = os.environ.get("RETRIEVER_MODE", "hybrid").strip().lower()
+if RETRIEVER_MODE not in {"bm25", "hybrid"}:
+    raise RuntimeError(f"RETRIEVER_MODE must be 'bm25' or 'hybrid', got {RETRIEVER_MODE!r}")
+
 _chunks = load_chunks()
-_retriever = BM25Retriever(_chunks)
+if RETRIEVER_MODE == "hybrid":
+    # Imported lazily so bm25 mode works without fastembed installed.
+    from hybrid_retriever import HybridRetriever
+    _retriever = HybridRetriever(_chunks)
+else:
+    _retriever = BM25Retriever(_chunks)
 
-# NOTE ON CONFIDENCE: an earlier version of this API used a fixed BM25
-# score threshold (25.0) to flag low-relevance queries. Checking the score
-# distributions on the eval set showed real overlap between answerable and
-# unanswerable questions (11/52 answerable questions scored below the
-# highest unanswerable score), so a fixed cutoff produces both false
-# negatives (good answers marked unconfident) and false positives if set
-# too low. Raw BM25 score is a term-overlap statistic, not a semantic
-# relevance judgment, so it's not a reliable confidence signal on its own.
-#
-# v1 (this file): report the score plainly and let the caller judge
-# relevance from the retrieved text itself.
-# v2: replace this with either (a) dense-embedding cosine similarity,
-# which typically separates better, or (b) an LLM reading the top passage
-# and judging whether it actually answers the question - a semantic check
-# rather than a numeric threshold.
+# Warm up now so the embedding model is loaded before the first real request.
+_retriever.search("warm-up query", top_k=1)
 
-# Below the lowest score seen for ANY question in eval, answerable or not:
-# a true floor, not a decision boundary.
-LOW_RELEVANCE_HINT = 15.0
-# Upper bound of unanswerable scores seen in eval.
-UNANSWERABLE_CEILING = 27.4
+# NOTE ON CONFIDENCE: an earlier version flagged low-relevance queries with a fixed
+# BM25 score threshold. On the eval set the score distributions of answerable and
+# unanswerable questions overlapped, so no fixed cutoff worked. Hybrid scores are
+# reciprocal-rank-fusion values (max ~0.033) that only reflect rank agreement, so
+# they are even less usable as a confidence signal. Relevance is judged by /ask,
+# where the LLM reads the retrieved text and states ANSWERABLE: yes/no.
+SCORE_NOTES = {
+    "hybrid": (
+        "Scores are reciprocal-rank-fusion values that reflect rank agreement between BM25 "
+        "and dense retrieval, not answer confidence. Use /ask for an answer grounded in the retrieved text."
+    ),
+    "bm25": (
+        "Scores are raw BM25 term-overlap values, not a reliable confidence signal. "
+        "Use /ask for an answer grounded in the retrieved text."
+    ),
+}
+
+# Passages are sent to the LLM in full (not just the 220-char preview), capped so a very
+# long section (e.g. the Act's interpretation section) cannot blow up the prompt.
+MAX_PASSAGE_CHARS = 2000
 
 
 # ---------- Auth (protects /ask, which spends Groq quota) ----------
@@ -80,11 +93,14 @@ class RetrievedPassage(BaseModel):
     score: float
     citation: str
     text_preview: str
+    # Present in hybrid mode: where each retriever ranked this passage on its own.
+    bm25_rank: int | None = None
+    dense_rank: int | None = None
 
 
 class QueryResponse(BaseModel):
     question: str
-    is_confident: bool
+    retriever: str
     passages: list[RetrievedPassage]
     note: str | None = None
 
@@ -96,41 +112,39 @@ class AskResponse(BaseModel):
     passages_used: list[RetrievedPassage]
 
 
+def _to_passage(r: dict) -> RetrievedPassage:
+    return RetrievedPassage(
+        rank=r["rank"],
+        score=r["score"],
+        citation=r["citation"],
+        text_preview=r["text_preview"],
+        bm25_rank=r.get("bm25_rank"),
+        dense_rank=r.get("dense_rank"),
+    )
+
+
+def _passage_for_prompt(r: dict) -> str:
+    text = r["text"]
+    if len(text) > MAX_PASSAGE_CHARS:
+        text = text[:MAX_PASSAGE_CHARS] + " [truncated]"
+    return f"[{r['citation']}]\n{text}"
+
+
 # ---------- Endpoints ----------
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "chunks_loaded": len(_chunks)}
+    return {"status": "ok", "chunks_loaded": len(_chunks), "retriever": RETRIEVER_MODE}
 
 
 @app.post("/query", response_model=QueryResponse)
 def query(req: QueryRequest):
     results = _retriever.search(req.question, top_k=req.top_k)
-    top_score = results[0]["score"] if results else 0.0
-
-    note = None
-    if top_score < LOW_RELEVANCE_HINT:
-        note = (
-            "Very low retrieval score - this question is likely outside "
-            "the loaded corpus (Petroleum Industry Act 2021, Royalty, Gas "
-            "Flaring, and Decommissioning regulations)."
-        )
-    elif top_score < UNANSWERABLE_CEILING:
-        note = (
-            "Retrieval score is in a range where both relevant and "
-            "out-of-scope questions have scored in testing - check the "
-            "retrieved passage actually addresses the question before "
-            "trusting the citation."
-        )
-
     return QueryResponse(
         question=req.question,
-        is_confident=top_score >= UNANSWERABLE_CEILING,
-        passages=[
-            RetrievedPassage(rank=r["rank"], score=r["score"], citation=r["citation"], text_preview=r["text_preview"])
-            for r in results
-        ],
-        note=note,
+        retriever=RETRIEVER_MODE,
+        passages=[_to_passage(r) for r in results],
+        note=SCORE_NOTES[RETRIEVER_MODE],
     )
 
 
@@ -152,9 +166,7 @@ Rules:
 def ask(req: QueryRequest):
     results = _retriever.search(req.question, top_k=req.top_k)
 
-    context = "\n\n".join(
-        f"[{r['citation']}]\n{r['text_preview']}" for r in results
-    )
+    context = "\n\n".join(_passage_for_prompt(r) for r in results)
     user_prompt = f"Question: {req.question}\n\nSource passages:\n\n{context}"
 
     try:
@@ -178,8 +190,5 @@ def ask(req: QueryRequest):
         question=req.question,
         grounded=grounded,
         answer=answer,
-        passages_used=[
-            RetrievedPassage(rank=r["rank"], score=r["score"], citation=r["citation"], text_preview=r["text_preview"])
-            for r in results
-        ],
+        passages_used=[_to_passage(r) for r in results],
     )

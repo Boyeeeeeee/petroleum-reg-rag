@@ -1,0 +1,8 @@
+{
+  "model": "BAAI/bge-small-en-v1.5",
+  "n_chunks": 478,
+  "dim": 384,
+  "text_hash": "37769c0ffe1dbb75095335179933f24d49cd648a307ea834a21c3a70e6fbfdd1",
+  "row_order": "row i of embeddings.npy = chunks[i] in all_chunks.json",
+  "query_prefix": "Represent this sentence for searching relevant passages: "
+}

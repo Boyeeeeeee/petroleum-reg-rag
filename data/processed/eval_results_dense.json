@@ -1,0 +1,23 @@
+{
+  "retriever": "dense",
+  "top_k": 5,
+  "hit_rate_at_k": 0.9423076923076923,
+  "mrr": 0.8426282051282052,
+  "misses": [
+    {
+      "question": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 309",
+      "top_result": "Petroleum Industry Act, 2021, Section 120"
+    },
+    {
+      "question": "What royalty rate applies to onshore crude oil and condensate production under the Seventh Schedule?",
+      "expected_citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 10",
+      "top_result": "Petroleum Royalty Regulations, 2022, Regulation 11"
+    },
+    {
+      "question": "What must the Commission publish regarding licence applications, per paragraph 1 of the Seventh Schedule?",
+      "expected_citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1",
+      "top_result": "Petroleum Industry Act, 2021, Section 83"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "retriever": "hybrid",
+  "top_k": 5,
+  "hit_rate_at_k": 0.9807692307692307,
+  "mrr": 0.8589743589743589,
+  "misses": [
+    {
+      "question": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 309",
+      "top_result": "Petroleum Industry Act, 2021, Section 96"
+    }
+  ]
+}

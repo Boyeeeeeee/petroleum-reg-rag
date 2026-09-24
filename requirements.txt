@@ -6,3 +6,5 @@ groq
 python-dotenv
 pytest
 httpx
+fastembed
+numpy

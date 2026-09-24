@@ -1,0 +1,33 @@
+{
+  "retriever": "bm25",
+  "top_k": 5,
+  "hit_rate_at_k": 0.9038461538461539,
+  "mrr": 0.8205128205128205,
+  "misses": [
+    {
+      "question": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 309",
+      "top_result": "Petroleum Industry Act, 2021, Section 63"
+    },
+    {
+      "question": "What must be paid before a petroleum prospecting licence or mining lease can be granted?",
+      "expected_citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 3",
+      "top_result": "Petroleum Industry Act, 2021, Section 81"
+    },
+    {
+      "question": "What must the Commission publish regarding licence applications, per paragraph 1 of the Seventh Schedule?",
+      "expected_citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1",
+      "top_result": "Petroleum Royalty Regulations, 2022, Regulation 15"
+    },
+    {
+      "question": "How does Regulation 47 define 'arm's length'?",
+      "expected_citation": "Petroleum Royalty Regulations, 2022, Regulation 47",
+      "top_result": "Petroleum Royalty Regulations, 2022, Regulation 33"
+    },
+    {
+      "question": "How soon after completing decommissioning and abandonment must a licensee notify the Commission?",
+      "expected_citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 15",
+      "top_result": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 5"
+    }
+  ]
+}
