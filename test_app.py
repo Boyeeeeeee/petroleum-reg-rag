@@ -98,8 +98,10 @@ def test_query_rejects_missing_question():
     assert resp.status_code == 422
 
 
-# ---- /ask (real Groq calls, no mocking; requires X-API-Key) ----
+# ---- /ask (real Groq calls, no mocking; requires X-API-Key; marked `groq`, skipped in CI) ----
 
+@pytest.mark.groq
+@pytest.mark.groq
 def test_ask_grounds_answerable_question():
     resp = client.post("/ask", json={
         "question": "What is the penalty for gas flaring without authorisation?",
@@ -113,6 +115,8 @@ def test_ask_grounds_answerable_question():
     assert any("Regulation 16" in p["citation"] for p in body["passages_used"])
 
 
+@pytest.mark.groq
+@pytest.mark.groq
 def test_ask_declines_unanswerable_question():
     resp = client.post("/ask", json={
         "question": "What is the current price of Brent crude oil?",
@@ -123,6 +127,8 @@ def test_ask_declines_unanswerable_question():
     assert body["grounded"] is False
 
 
+@pytest.mark.groq
+@pytest.mark.groq
 def test_ask_returns_passages_used_matching_top_k():
     resp = client.post("/ask", json={
         "question": "What must a licensee do before decommissioning a well?",
