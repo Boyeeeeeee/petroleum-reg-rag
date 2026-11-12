@@ -1,8 +1,8 @@
 {
   "retriever": "bm25",
   "top_k": 5,
-  "hit_rate_at_k": 0.9038461538461539,
-  "mrr": 0.8205128205128205,
+  "hit_rate_at_k": 0.9313725490196079,
+  "mrr": 0.8537581699346405,
   "misses": [
     {
       "question": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
@@ -28,6 +28,16 @@
       "question": "How soon after completing decommissioning and abandonment must a licensee notify the Commission?",
       "expected_citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 15",
       "top_result": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 5"
+    },
+    {
+      "question": "What qualifications must the Secretary of the Nigerian Upstream Petroleum Regulatory Commission have?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 23",
+      "top_result": "Petroleum Industry Act, 2021, Section 4"
+    },
+    {
+      "question": "Can a company that cannot file its hydrocarbon tax returns on time get more time, and who grants it?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 281",
+      "top_result": "Petroleum Industry Act, 2021, Section 282"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "retriever": "dense",
   "top_k": 5,
-  "hit_rate_at_k": 0.9423076923076923,
-  "mrr": 0.8426282051282052,
+  "hit_rate_at_k": 0.9411764705882353,
+  "mrr": 0.8683006535947712,
   "misses": [
     {
       "question": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
@@ -18,6 +18,21 @@
       "question": "What must the Commission publish regarding licence applications, per paragraph 1 of the Seventh Schedule?",
       "expected_citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1",
       "top_result": "Petroleum Industry Act, 2021, Section 83"
+    },
+    {
+      "question": "What qualifications must the Secretary of the Nigerian Upstream Petroleum Regulatory Commission have?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 23",
+      "top_result": "Petroleum Industry Act, 2021, Section 4"
+    },
+    {
+      "question": "What notice must a midstream or downstream licence holder with ongoing operations give before ceasing activities, unless the licence says otherwise?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 119",
+      "top_result": "Petroleum Industry Act, 2021, Section 126"
+    },
+    {
+      "question": "Can a company that cannot file its hydrocarbon tax returns on time get more time, and who grants it?",
+      "expected_citation": "Petroleum Industry Act, 2021, Section 281",
+      "top_result": "Petroleum Industry Act, 2021, Section 296"
     }
   ]
 }

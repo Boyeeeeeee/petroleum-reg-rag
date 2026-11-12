@@ -27,7 +27,7 @@ def results():
 
 def test_hybrid_hit_rate_stays_high(results):
     _, hybrid = results
-    # Currently 51/52 (98.1%). 50/52 still passes; 49/52 (94.2%) would fail.
+    # Currently 98/102 (96.1%). 97/102 (95.1%) still passes; 96/102 (94.1%) would fail.
     assert hybrid["hit_rate_at_k"] >= 0.95
 
 

@@ -1,313 +1,1590 @@
 {
   "answerable": [
     {
+      "id": "e001",
       "q": "Is an Incorporated Joint Venture Company (IJVC) subject to the Fiscal Responsibility Act and the Public Procurement Act?",
       "a": "No \u2014 paragraph 2 of the Second Schedule states no IJVC shall be subject to either Act.",
-      "citation": "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 2"
+      "citation": "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 2",
+      "accept": [
+        "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 2"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e002",
       "q": "Under what authority does the Board of NNPC Limited perform its duties?",
       "a": "In accordance with the Petroleum Industry Act, the Companies and Allied Matters Act, and NNPC Limited's own articles of association (Section 58).",
-      "citation": "Petroleum Industry Act, 2021, Section 58"
+      "citation": "Petroleum Industry Act, 2021, Section 58",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 58"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e003",
       "q": "Who pays the remuneration and allowances of Commissioners of the Nigerian Upstream Petroleum Regulatory Commission, and what must it comply with?",
       "a": "They are paid from the Commission's own funds, and the remuneration must comply with the policy and guidelines of the National Salaries, Incomes and Wages Commission (Section 13).",
-      "citation": "Petroleum Industry Act, 2021, Section 13"
+      "citation": "Petroleum Industry Act, 2021, Section 13",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 13"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e004",
       "q": "Can a gas transportation network operator licence include an obligation to develop market rules?",
       "a": "Yes \u2014 Section 141(1) allows this as an additional condition on a transportation network operator licence.",
-      "citation": "Petroleum Industry Act, 2021, Section 141"
+      "citation": "Petroleum Industry Act, 2021, Section 141",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 141"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e005",
       "q": "What is one thing the Authority's regulations for midstream and downstream gas operations may include, under Section 126?",
       "a": "The establishment and operation of a wholesale natural gas market scheme to ensure continuity of supply to customers.",
-      "citation": "Petroleum Industry Act, 2021, Section 126"
+      "citation": "Petroleum Industry Act, 2021, Section 126",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 126"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e006",
       "q": "What law governs compensation for land acquired for midstream and downstream petroleum operations?",
       "a": "The Land Use Act, per Section 115(1).",
-      "citation": "Petroleum Industry Act, 2021, Section 115"
+      "citation": "Petroleum Industry Act, 2021, Section 115",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 115"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e007",
       "q": "What exclusive right does a holder of a petroleum prospecting licence have under Section 72?",
       "a": "The exclusive right to drill exploration and appraisal wells within the licence area (with a non-exclusive right to carry out petroleum exploration operations generally).",
-      "citation": "Petroleum Industry Act, 2021, Section 72"
+      "citation": "Petroleum Industry Act, 2021, Section 72",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 72"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e008",
       "q": "Within what timeframe after the PIA's commencement was the Minister required to incorporate NNPC Limited?",
       "a": "Within six months from the commencement of the Act (Section 53(1)).",
-      "citation": "Petroleum Industry Act, 2021, Section 53"
+      "citation": "Petroleum Industry Act, 2021, Section 53",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 53"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e009",
       "q": "Under the Fifth Schedule, when is a building, structure or works of a permanent nature considered 'disposed of'?",
       "a": "Among other triggers listed in paragraph 10: when the relevant interest is sold, or when a concession-dependent interest ends at the end of that concession.",
-      "citation": "Petroleum Industry Act, 2021, FIFTH SCHEDULE, paragraph 10"
+      "citation": "Petroleum Industry Act, 2021, FIFTH SCHEDULE, paragraph 10",
+      "accept": [
+        "Petroleum Industry Act, 2021, FIFTH SCHEDULE, paragraph 10"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e010",
       "q": "How soon after the start of an accounting period must an upstream crude oil company submit an estimated return of profits for hydrocarbon tax purposes?",
       "a": "Not later than two months after the commencement of the accounting period (Section 280(1)).",
-      "citation": "Petroleum Industry Act, 2021, Section 280"
+      "citation": "Petroleum Industry Act, 2021, Section 280",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 280"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e011",
       "q": "By when must the Authority present its statement of estimated income and expenditure to the National Assembly?",
       "a": "Not later than 30th September each year, or another date set by the Minister responsible for Budget and National Planning (Section 45(1)).",
-      "citation": "Petroleum Industry Act, 2021, Section 45"
+      "citation": "Petroleum Industry Act, 2021, Section 45",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 45"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e012",
       "q": "Does the Petroleum Industry Act apply to holders of an oil prospecting licence or mining lease who have not entered a conversion contract?",
       "a": "Generally no, per Section 303(1) \u2014 except for section 311 and paragraphs 10 and 11 of the Seventh Schedule, which apply to licences and leases awarded to indigenous Nigerian companies.",
-      "citation": "Petroleum Industry Act, 2021, Section 303"
+      "citation": "Petroleum Industry Act, 2021, Section 303",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 303"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e013",
       "q": "What may the Commission or Authority do when a lease, licence or permit holder is contravening its conditions, under Section 217?",
       "a": "It may publish a notice, in a manner it considers appropriate, to draw the attention of other persons affected or likely to be affected by the contravention.",
-      "citation": "Petroleum Industry Act, 2021, Section 217"
+      "citation": "Petroleum Industry Act, 2021, Section 217",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 217"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e014",
       "q": "How is a vacancy on the Board of the Commission filled?",
       "a": "By appointing another person in accordance with section 11 of the Act (Section 17).",
-      "citation": "Petroleum Industry Act, 2021, Section 17"
+      "citation": "Petroleum Industry Act, 2021, Section 17",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 17"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e015",
       "q": "Name one circumstance under which a vacancy on the Board of the Commission occurs.",
       "a": "Among others listed in Section 16: the commissioner dies, resigns, completes tenure, is removed under section 14, or is incapacitated.",
-      "citation": "Petroleum Industry Act, 2021, Section 16"
+      "citation": "Petroleum Industry Act, 2021, Section 16",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 16"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e016",
       "q": "Must a government ministry consult the Authority before issuing a regulation that could affect midstream or downstream petroleum operations?",
       "a": "Yes \u2014 Section 48(1) requires such consultation before issuing any regulation, guideline, enforcement order or directive with direct impact on those operations.",
-      "citation": "Petroleum Industry Act, 2021, Section 48"
+      "citation": "Petroleum Industry Act, 2021, Section 48",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 48"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e017",
       "q": "What must the Authority do when an application for a licence grant or renewal is made, under Section 112?",
       "a": "Publish a notification of the application in a manner prescribed by regulation.",
-      "citation": "Petroleum Industry Act, 2021, Section 112"
+      "citation": "Petroleum Industry Act, 2021, Section 112",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 112"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e018",
       "q": "Name one ground on which a licence or permit may be revoked under Section 120.",
       "a": "One ground is that the holder becomes insolvent or bankrupt, or goes into liquidation (except as part of a scheme of arrangement or amalgamation).",
-      "citation": "Petroleum Industry Act, 2021, Section 120"
+      "citation": "Petroleum Industry Act, 2021, Section 120",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 120"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e019",
       "q": "Which body is responsible for assessing and collecting hydrocarbon tax under Section 259?",
       "a": "The Federal Inland Revenue Service (the Service).",
-      "citation": "Petroleum Industry Act, 2021, Section 259"
+      "citation": "Petroleum Industry Act, 2021, Section 259",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 259"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e020",
       "q": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
       "a": "The PIA prevails, except for the Nigeria Oil and Gas Industry Content Development Act (Section 309).",
-      "citation": "Petroleum Industry Act, 2021, Section 309"
+      "citation": "Petroleum Industry Act, 2021, Section 309",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 309"
+      ],
+      "type": "who",
+      "known_failure": true,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e021",
       "q": "Give one ground under Section 14 for the President to suspend or remove a member of the Commission's Board.",
       "a": "One ground is that the member is found unqualified for appointment under section 11, or becomes unqualified after appointment.",
-      "citation": "Petroleum Industry Act, 2021, Section 14"
+      "citation": "Petroleum Industry Act, 2021, Section 14",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 14"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e022",
       "q": "Where can a taxpayer appeal a tax assessment made under Section 285(6) of the PIA?",
       "a": "To the Tax Appeal Tribunal established under section 59 of the Federal Inland Revenue Service (Establishment) Act (Section 288).",
-      "citation": "Petroleum Industry Act, 2021, Section 288"
+      "citation": "Petroleum Industry Act, 2021, Section 288",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 288"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e023",
       "q": "Within what timeframe must a licensee submit an environmental management plan requiring environmental impact assessment?",
       "a": "Within one year of the effective date, or six months after the grant of the applicable licence or lease (Section 102(1)).",
-      "citation": "Petroleum Industry Act, 2021, Section 102"
+      "citation": "Petroleum Industry Act, 2021, Section 102",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 102"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e024",
       "q": "What royalty rate applies to onshore crude oil and condensate production under the Seventh Schedule?",
       "a": "15% of the chargeable volume (shallow water is 12.5%, deep offshore and frontier basins are 7.5%), per paragraph 10(2).",
-      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 10"
+      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 10",
+      "accept": [
+        "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 10"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e025",
       "q": "How must an IJVC pay dividends to its shareholders, under the Second Schedule?",
       "a": "Pro rata among the number of issued shares held directly by shareholders, subject to any applicable withholding tax (paragraph 7).",
-      "citation": "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 7"
+      "citation": "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 7",
+      "accept": [
+        "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 7"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e026",
       "q": "What must be paid before a petroleum prospecting licence or mining lease can be granted?",
       "a": "The applicable fees, signature bonus, and first-year rent (Seventh Schedule, paragraph 3(1)).",
-      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 3"
+      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 3",
+      "accept": [
+        "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 3"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e027",
       "q": "What power does the Authority have when it believes a prohibited act is likely to be undertaken, under Section 215?",
       "a": "It may serve a notice on the person specifying the act and its intention to issue a 'cease and desist' order.",
-      "citation": "Petroleum Industry Act, 2021, Section 215"
+      "citation": "Petroleum Industry Act, 2021, Section 215",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 215"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e028",
       "q": "What must the Authority ensure regarding third-party access under Section 113?",
       "a": "Third-party access to facilities and pipelines for midstream and downstream petroleum operations.",
-      "citation": "Petroleum Industry Act, 2021, Section 113"
+      "citation": "Petroleum Industry Act, 2021, Section 113",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 113"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e029",
       "q": "Name one offence under Section 230 relating to information given to the Commission or Authority.",
       "a": "Furnishing a false or incomplete return, or supplying false or incomplete information.",
-      "citation": "Petroleum Industry Act, 2021, Section 230"
+      "citation": "Petroleum Industry Act, 2021, Section 230",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 230"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e030",
       "q": "Besides the Petroleum Industry Act, what other tax law applies to companies engaged in petroleum operations?",
       "a": "The Companies Income Tax Act (Section 302(1)).",
-      "citation": "Petroleum Industry Act, 2021, Section 302"
+      "citation": "Petroleum Industry Act, 2021, Section 302",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 302"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e031",
       "q": "What general obligation does a wholesale gas supplier have toward customers under a gas purchase agreement, per Section 143?",
       "a": "To provide a reliable supply of wholesale gas to wholesale customers who have entered into a gas purchase and sale agreement with the supplier.",
-      "citation": "Petroleum Industry Act, 2021, Section 143"
+      "citation": "Petroleum Industry Act, 2021, Section 143",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 143"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e032",
       "q": "What is the legal status of the Nigerian Upstream Petroleum Regulatory Commission under Section 4?",
       "a": "A body corporate with perpetual succession and a common seal, able to acquire, hold and dispose of property and to sue and be sued in its own name.",
-      "citation": "Petroleum Industry Act, 2021, Section 4"
+      "citation": "Petroleum Industry Act, 2021, Section 4",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 4"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e033",
       "q": "What exclusive rights does a lessee under a petroleum mining lease have, per Section 82?",
       "a": "The exclusive right to carry out development and production of petroleum in the lease area, and to drill exploration and appraisal wells there.",
-      "citation": "Petroleum Industry Act, 2021, Section 82"
+      "citation": "Petroleum Industry Act, 2021, Section 82",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 82"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e034",
       "q": "What must the Commission publish regarding licence applications, per paragraph 1 of the Seventh Schedule?",
       "a": "The rates or fees payable for licence-related applications, such as a petroleum exploration licence application or a petroleum mining lease renewal.",
-      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1"
+      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1",
+      "accept": [
+        "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 1"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e035",
       "q": "How is the value of blended crude oil, condensates, or natural gas liquids determined?",
       "a": "At the measurement points, adjusted for transport costs within Nigeria (Regulation 28).",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 28"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 28",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 28"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e036",
       "q": "When may the Commission make an occasional determination of fiscal oil or gas price, under Regulation 22?",
       "a": "Where required for valuing test production or for other occasional purposes, including a lack of complete information from the lessee.",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 22"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 22",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 22"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e037",
       "q": "How is the average BTU production content of natural gas determined for a given month?",
       "a": "By dividing the total heating value measured by the approved gas calorimeter that month by the total volume of gas produced that month (Regulation 18).",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 18"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 18",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 18"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e038",
       "q": "What may a lessee do if insufficient natural gas is produced in a PML for production or injection needs?",
       "a": "Purchase the required natural gas, or transfer natural gas from another PML for that purpose (Regulation 10).",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 10"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 10",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 10"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e039",
       "q": "What must a lessee provide when a field straddles onshore and shallow water terrain, under Regulation 14?",
       "a": "Information on the volumes produced in each respective terrain, so a weighted average royalty rate can be calculated.",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 14"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 14",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 14"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e040",
       "q": "How does Regulation 47 define 'arm's length'?",
       "a": "As a relationship between two or more persons where none exerts, or is positioned to exert, significant influence over the others, having regard to all relevant factors.",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 47"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 47",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 47"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e041",
       "q": "Can a lessee produce petroleum from a PML without approved petroleum measurement meters installed?",
       "a": "No \u2014 Regulation 7(1) requires Commission-approved measurement meters to be installed before production.",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 7"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 7",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 7"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e042",
       "q": "Are by-products such as helium or sulphur subject to royalty under the PIA?",
       "a": "No \u2014 Regulation 6(2) states petroleum by-products, including helium or sulphur, are not subject to royalty.",
-      "citation": "Petroleum Royalty Regulations, 2022, Regulation 6"
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 6",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 6"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e043",
       "q": "Can a holder of an interest in a Permit to Access Flare Gas transfer that interest freely?",
       "a": "No \u2014 Regulation 13(1) requires the prior consent of the Commission before transferring, selling, assigning, or mortgaging any part of such an interest.",
-      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 13"
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 13",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 13"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e044",
       "q": "How long does a licensee have to comply with a Commission request for Gas Data?",
       "a": "30 days from receiving the notice, unless the Commission extends the time on request (Regulation 4).",
-      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 4"
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 4",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 4"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e045",
       "q": "Under what two conditions is gas flaring allowed outside of emergencies, per Regulation 12?",
       "a": "The flaring must be within the Commission-approved threshold, and a flaring fee must be paid.",
-      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 12"
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 12",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 12"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e046",
       "q": "What is the short title of the 2023 regulation governing gas flaring, venting and methane emissions?",
       "a": "The Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023 (Regulation 28).",
-      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 28"
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 28",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 28"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e047",
       "q": "How often must a producer of gas submit its daily flaring and venting log to the Commission?",
       "a": "Within 21 days following the end of each month (Regulation 20).",
-      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 20"
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 20",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 20"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e048",
       "q": "What happens if a licensee fails to resubmit an abandonment application and the Commission believes the well needs abandoning, under Regulation 9?",
       "a": "The Commission shall appoint a third party to carry out the abandonment of the well.",
-      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 9"
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 9",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 9"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e049",
       "q": "What is the citation title of the 2023 Nigerian decommissioning regulation?",
       "a": "The Nigeria Upstream Decommissioning and Abandonment Regulations, 2023 (Regulation 26).",
-      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 26"
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 26",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 26"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e050",
       "q": "What do the Decommissioning and Abandonment Regulations apply to, under Regulation 2?",
       "a": "The decommissioning and abandonment of facilities used in upstream petroleum operations in Nigeria, and associated wells, installations and facilities under a licence or lease.",
-      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 2"
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 2",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 2"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": true,
+      "source": "original"
     },
     {
+      "id": "e051",
       "q": "What is the administrative penalty for a licensee who fails to submit a decommissioning and abandonment plan on time?",
       "a": "USD$500,000 for every year of non-compliance, payable to the Commission (or revocation of the licence/lease interest) \u2014 Regulation 24.",
-      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 24"
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 24",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 24"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
     },
     {
+      "id": "e052",
       "q": "How soon after completing decommissioning and abandonment must a licensee notify the Commission?",
       "a": "Within six months of completion (Regulation 15).",
-      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 15"
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 15",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 15"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "original"
+    },
+    {
+      "id": "g001",
+      "q": "What qualifications must the Secretary of the Nigerian Upstream Petroleum Regulatory Commission have?",
+      "a": "A legal practitioner with at least 10 years' post-qualification experience.",
+      "citation": "Petroleum Industry Act, 2021, Section 23",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 23"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "minimum of 10 years post-qualification experience"
+      ],
+      "parallel": true
+    },
+    {
+      "id": "g002",
+      "q": "What must NNPC Limited's Board do if its external auditor cannot confirm the financial statements fairly represent the company?",
+      "a": "Immediately convene an extraordinary general meeting to notify shareholders and consider action.",
+      "citation": "Petroleum Industry Act, 2021, Section 62",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 62"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "convene an extraordinary general meeting"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g003",
+      "q": "What can the Minister do when a significant petroleum discovery is made in a frontier basin?",
+      "a": "On the Commission's recommendation, reclassify all or part of the basin as a general onshore area, so onshore fiscal terms apply to new licences and leases (and renewed leases), but not to licences existing at reclassification.",
+      "citation": "Petroleum Industry Act, 2021, Section 68",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 68"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "reclassify all or part of the basin"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g004",
+      "q": "What is the maximum duration of a petroleum prospecting licence for deep offshore acreage, and how is it split?",
+      "a": "Not more than 10 years: an initial 5-year period plus an optional 5-year extension.",
+      "citation": "Petroleum Industry Act, 2021, Section 77",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 77"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not more than 10 years"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g005",
+      "q": "How far ahead of expiry must a petroleum mining lessee apply for renewal?",
+      "a": "At least 12 months before expiry, in writing to the Commission.",
+      "citation": "Petroleum Industry Act, 2021, Section 87",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 87"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not less than 12"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g006",
+      "q": "Before production starts, what must a licensee install on facilities from which gas may be flared or vented?",
+      "a": "Metering equipment meeting the prescribed specifications.",
+      "citation": "Petroleum Industry Act, 2021, Section 106",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 106"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "install metering equipment"
+      ],
+      "parallel": true
+    },
+    {
+      "id": "g007",
+      "q": "What notice must a midstream or downstream licence holder with ongoing operations give before ceasing activities, unless the licence says otherwise?",
+      "a": "At least 12 months' written notice to the Authority.",
+      "citation": "Petroleum Industry Act, 2021, Section 119",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 119"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "minimum of 12 months"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g008",
+      "q": "What kind of company must the domestic gas aggregator be, and who may not control it?",
+      "a": "A not-for-profit company limited by guarantee under CAMA, not controlled by upstream licensees or lessees, wholesale customers or their affiliates.",
+      "citation": "Petroleum Industry Act, 2021, Section 155",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 155"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not-for-profit company"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g009",
+      "q": "Who develops the access terms for a gas transportation pipeline that is isolated from the main network?",
+      "a": "The Authority develops separate terms of access.",
+      "citation": "Petroleum Industry Act, 2021, Section 161",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 161"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "isolated from the main gas"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g010",
+      "q": "By what date each year must the Authority determine the domestic gas demand requirement?",
+      "a": "Before 1 March, and it must inform the Commission.",
+      "citation": "Petroleum Industry Act, 2021, Section 173",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 173"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "prior to the 1st of march"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g011",
+      "q": "How long do settlors of existing oil mining leases have to incorporate a host communities development trust?",
+      "a": "Within 12 months from the effective date.",
+      "citation": "Petroleum Industry Act, 2021, Section 236",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 236"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "within 12 months from the effective date for existing oil mining leases"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g012",
+      "q": "What annual contribution must a settlor make to the host communities development trust fund?",
+      "a": "3% of its actual annual operating expenditure of the preceding financial year in the affected upstream operations.",
+      "citation": "Petroleum Industry Act, 2021, Section 240",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 240"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "3% of its actual annual operating expenditure"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g013",
+      "q": "Who gives the Board of Trustees the matrix for sharing the trust fund among host communities?",
+      "a": "The settlor.",
+      "citation": "Petroleum Industry Act, 2021, Section 245",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 245"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "settlor shall provide to the board of trustees a matrix"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g014",
+      "q": "What must the Board of Trustees do with the reserve fund as it accrues?",
+      "a": "Engage a fund manager to invest it.",
+      "citation": "Petroleum Industry Act, 2021, Section 246",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 246"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "engage a fund manager to invest"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g015",
+      "q": "By what date must the settlor submit the annual host communities trust report and audited accounts to the Commission or Authority?",
+      "a": "Not later than 31st May.",
+      "citation": "Petroleum Industry Act, 2021, Section 255",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 255"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "31st may"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g016",
+      "q": "What hydrocarbon tax percentage applies to crude oil profits for onshore and shallow water prospecting licences selected on conversion?",
+      "a": "15% (30% applies to the mining leases selected under the other limb).",
+      "citation": "Petroleum Industry Act, 2021, Section 267",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 267"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "15% of profit from crude oil"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g017",
+      "q": "If a petroleum company transfers a substantial part of its assets to avoid tax, who can the unpaid tax be recovered from?",
+      "a": "The person who received the assets (the transferee).",
+      "citation": "Petroleum Industry Act, 2021, Section 275",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 275"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "recovered from that person"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g018",
+      "q": "Can a company that cannot file its hydrocarbon tax returns on time get more time, and who grants it?",
+      "a": "Yes, the Service may grant a written extension where good reason is shown.",
+      "citation": "Petroleum Industry Act, 2021, Section 281",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 281"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "extension of that time"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g019",
+      "q": "In a suit to recover hydrocarbon tax, what is sufficient evidence of the amount due?",
+      "a": "A certificate signed by a duly authorised Service officer giving the defendant's name, address and the amount of tax due.",
+      "citation": "Petroleum Industry Act, 2021, Section 294",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 294"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "sufficient evidence of the amount due"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g020",
+      "q": "Do fiscal stabilisation clauses in new contracts protect against newly imposed withholding tax, VAT or companies income tax?",
+      "a": "No, not where the changes are non-discriminatory and these are generally applicable taxes.",
+      "citation": "Petroleum Industry Act, 2021, Section 305",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 305"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "generally applicable taxes"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g021",
+      "q": "What notice is required before suing the Commission or the Authority?",
+      "a": "One month's written notice of the intention to sue.",
+      "citation": "Petroleum Industry Act, 2021, Section 308",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 308"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "period of one month after a written notice"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g022",
+      "q": "What must a settlor do with existing CSR or MoU community projects once a host communities development trust is set up?",
+      "a": "Transfer them to the trust and notify the Commission or Authority on completion.",
+      "citation": "Petroleum Industry Act, 2021, Section 316",
+      "accept": [
+        "Petroleum Industry Act, 2021, Section 316"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "shall transfer any existing host communities"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g023",
+      "q": "What kind of shares does an incorporated joint venture company initially have, and can NNPC Limited's shares in it be sold?",
+      "a": "Initially only ordinary shares; NNPC Limited's shares are non-transferable except as Government approves, at fair market value after open competitive bidding.",
+      "citation": "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 4",
+      "accept": [
+        "Petroleum Industry Act, 2021, SECOND SCHEDULE, paragraph 4"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "consist only of ordinary shares",
+        "non-transferable"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g024",
+      "q": "What are the annual allowance rates for qualifying drilling expenditure over the five years?",
+      "a": "20% in each of years 1 to 4 and 19% in year 5.",
+      "citation": "Petroleum Industry Act, 2021, FIFTH SCHEDULE, paragraph 17",
+      "accept": [
+        "Petroleum Industry Act, 2021, FIFTH SCHEDULE, paragraph 17"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "qualifying drilling expenditure 20% 20% 20% 20% 19%"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g025",
+      "q": "If rent on a licence is not paid and no penalty is prescribed, what interest applies and when does revocation start?",
+      "a": "LIBOR (or successor) plus 10% on the outstanding US Dollar amount; revocation is initiated if the rent is unpaid after three months.",
+      "citation": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 4",
+      "accept": [
+        "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 4"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "libor or any other successor rate"
+      ],
+      "parallel": true
+    },
+    {
+      "id": "g026",
+      "q": "By what day of the month must a lessee file its monthly royalty statement?",
+      "a": "On or before the 15th of each month following the month of production.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 37",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 37"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "on or before the 15th of each month following"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g027",
+      "q": "How is production allocated for a field straddling several mining leases under a unitization agreement, for royalty purposes?",
+      "a": "The unitization agreement sets the allocation and each lessee pays royalty on its allocation, unless another Commission-approved method applies.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 9",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 9"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "unitization agreement shall set out the allocation"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g028",
+      "q": "Who bears the cost of storing royalty oil before lifting?",
+      "a": "The lessee.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 19",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 19"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "cost of storage prior to lifting"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g029",
+      "q": "How can the Commission establish the value of a new type of crude oil, condensate or natural gas liquids?",
+      "a": "It can mandate the lessee to carry out test marketing of the new stream under its guidelines.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 25",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 25"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "test marketing of the new stream"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g030",
+      "q": "Can the Commission adjust quality or transport differentials when valuing crude oil, and on whose initiative?",
+      "a": "Yes, at the lessee's request or on its own initiative, to approximate fair market value.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 26",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 26"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "quality differentials, transport differentials"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g031",
+      "q": "When royalty in kind is delivered continuously, what is paid during the first days of a month?",
+      "a": "Royalty continues on the previous month's determination until the royalty statement fixes the amount, then it is adjusted.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 38",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 38"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "determination for the previous month"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g032",
+      "q": "How long must a lessee keep hard copies of its production and valuation records?",
+      "a": "At least six years, unless the Commission requires longer.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 40",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 40"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "at least six years"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g033",
+      "q": "What happens to a Government refund that results from a royalty audit?",
+      "a": "It is treated as a credit the lessee uses to offset future royalty obligations.",
+      "citation": "Petroleum Royalty Regulations, 2022, Regulation 42",
+      "accept": [
+        "Petroleum Royalty Regulations, 2022, Regulation 42"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "offset future royalty obligations"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g034",
+      "q": "How much prior notice must a producer get before a Data Access Permit holder visits its flare site to assess it?",
+      "a": "Not less than seven days.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 5",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 5"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not less than seven days"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g035",
+      "q": "Can a foreign company not incorporated in Nigeria hold a permit to access flare gas?",
+      "a": "Yes, but a successful bidder must incorporate under CAMA.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 6",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 6"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "foreign company"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g036",
+      "q": "How long do holders of flare exemption letters have to sign a Milestone Development Agreement, and what must back it?",
+      "a": "Three months from the effective date, backed by a milestone bond.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 8",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 8"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "milestone development agreement shall be executed within"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g037",
+      "q": "How long does a permit holder have to renew an expired bond before the permit can be revoked on that ground?",
+      "a": "Within 30 days of its expiry or invalidation.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 11",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 11"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "within 30 days of its expiry or invalidation"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g038",
+      "q": "What daily fine applies after written notification when a producer keeps failing to submit gas data?",
+      "a": "USD 1,000 (or the Naira equivalent) per day; the initial fine is USD 10,000.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 17",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 17"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "usd$1000"
+      ],
+      "parallel": true
+    },
+    {
+      "id": "g039",
+      "q": "Who is liable for gas flared after a permit holder's commercialisation operations have started, and what excuse exists?",
+      "a": "The permit holder, unless it shows the flaring was by the licensee, lessee or producer supplying the gas.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 19",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 19"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "permit holder shall be liable for the gas volumes flared"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g040",
+      "q": "What is the deadline for a producer of gas to submit its annual gas report?",
+      "a": "Not later than March 31st for the previous year.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 22",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 22"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not later than march 31st"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g041",
+      "q": "By what date must the Commission publish its annual flaring and venting report?",
+      "a": "Not later than June 30th.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 23",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 23"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "june 30th"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g042",
+      "q": "Who provides and installs metering equipment for disposed gas, and who maintains it?",
+      "a": "The permit holder provides and installs it; the gas producer maintains it.",
+      "citation": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 24",
+      "accept": [
+        "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 24"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "responsible for the maintenance"
+      ],
+      "parallel": true
+    },
+    {
+      "id": "g043",
+      "q": "How long does the Commission have to decide an application to permanently plug and abandon a well, and what if it stays silent?",
+      "a": "60 days; silence means the application is deemed approved.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 7",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 7"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "deemed approved"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g044",
+      "q": "If well abandonment is part of decommissioning a field, how is the application handled?",
+      "a": "It goes into the decommissioning programme application and follows that programme's decision timelines.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 8",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 8"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "incorporated in the application for the decommissioning"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g045",
+      "q": "How long does the Commission have to respond to a decommissioning and abandonment programme application?",
+      "a": "120 days from receipt.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 12",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 12"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "120 days of receipt"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g046",
+      "q": "What happens if the Commission does not respond within 60 days to a proposed change to an approved decommissioning programme?",
+      "a": "The change is deemed approved.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 14",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 14"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "60 days of receipt of the licensee or"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g047",
+      "q": "When may the Commission order decommissioning regardless of the timing in the plan?",
+      "a": "By written notice, including after surrender or relinquishment of the licence area, or in line with good international petroleum industry practices.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 16",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 16"
+      ],
+      "type": "process",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "good international petroleum industry practices"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g048",
+      "q": "Is the Commission's database of upstream installations and pipelines public?",
+      "a": "Yes, it is a public document published annually on the Commission's website.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 18",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 18"
+      ],
+      "type": "yes_no",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "shall be a public document"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g049",
+      "q": "By when must a licensee send the Commission and FIRS a statement of its decommissioning fund contributions?",
+      "a": "Not later than 90 days after the end of each calendar year.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 22",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 22"
+      ],
+      "type": "number",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "not later than 90 days succeeding"
+      ],
+      "parallel": false
+    },
+    {
+      "id": "g050",
+      "q": "Who takes on decommissioning liability when an interest in a licence or lease is assigned?",
+      "a": "The transferee, because proportionate liability attaches to the transferred property.",
+      "citation": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 23",
+      "accept": [
+        "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 23"
+      ],
+      "type": "who",
+      "known_failure": false,
+      "names_unit": false,
+      "source": "v2",
+      "anchors": [
+        "deemed to be attached to the property transferred"
+      ],
+      "parallel": false
     }
   ],
   "unanswerable": [
     {
+      "id": "u01",
       "q": "What is the current price of Brent crude oil?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u02",
       "q": "What is the minimum wage in Nigeria as of this year?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u03",
       "q": "How does the U.S. Clean Air Act regulate gas flaring?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u04",
       "q": "What was NNPC Limited's most recent audited net profit?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u05",
       "q": "What is the process for renewing a Nigerian international passport?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u06",
       "q": "Which university offers the best petroleum engineering program in Nigeria?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u07",
       "q": "What decisions were made at NUPRC's most recent board meeting?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u08",
       "q": "What is the current market price of a carbon credit from a flare monetisation project?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u09",
       "q": "How many barrels of oil did Nigeria produce last month?",
       "a": null,
       "citation": null
     },
     {
+      "id": "u10",
       "q": "What was the signature bonus paid in Nigeria's most recent marginal field bid round?",
       "a": null,
       "citation": null
