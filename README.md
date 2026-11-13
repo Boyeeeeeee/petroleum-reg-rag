@@ -18,6 +18,7 @@ Free-tier hosting, so the first request after a period of inactivity can take ab
 - [x] Hybrid retrieval (`hybrid_retriever.py`) — BM25 + dense, fused with reciprocal rank fusion
 - [x] Retrieval evaluation (`evaluate_retrieval.py`) — **hybrid Hit Rate@5: 96.1%, MRR: 0.882 on 102 questions** (BM25 baseline: 93.1%, 0.854). On the original 52 questions alone: hybrid 98.1%, 0.859
 - [x] Gold set label checks (`verify_gold.py`) — confirms every new label's citation exists, is unique, and that an anchor phrase from the answer appears in the cited chunk
+- [x] Abstention pilot (`eval_abstention.py`) — `/ask` refused all 10 unanswerable questions (10/10); see the caveats in its section below
 - [x] FastAPI service (`app.py`) — `/query` (raw retrieval) and `/ask` (LLM answer synthesis + grounding check)
 - [x] Per-question regression gate (`build_baseline.py`, `test_regression_gate.py`) — CI fails if a question the baseline found is now missed, or if MRR drops by more than 0.01
 - [x] Tests (pytest) — 20 tests: API tests in `test_app.py` (three `/ask` tests call Groq for real, not mocks), aggregate retrieval tests in `test_retrieval_eval.py` and the per-question gate in `test_regression_gate.py`
@@ -45,6 +46,7 @@ data/raw/*.pdf
   -> merge_gold.py          -> data/processed/eval_set.json (102 + 10 items)
   -> verify_gold.py         -> label checks on the 50 new questions
   -> build_baseline.py      -> data/processed/baseline.json (per-question ranks + data hashes)
+  -> eval_abstention.py     -> data/processed/abstention_pilot.json (calls Groq; run by hand, not in CI)
   -> notebooks/dense_embeddings.ipynb (Colab)
                             -> data/processed/embeddings.npy + embeddings_meta.json
   -> bm25_retriever.py      -> sparse retrieval
@@ -229,6 +231,26 @@ Instead, `/ask` uses an LLM to read the retrieved passages and judge
 directly whether they answer the question (`ANSWERABLE: yes/no`), which
 correctly separated the same two cases where the raw score could not.
 
+## Abstention pilot (10 unanswerable questions)
+`eval_abstention.py` sends the 10 unanswerable questions to `/ask` (hybrid
+retrieval, top 5, temperature 0) and records whether the model abstains, meaning
+its first line is `ANSWERABLE: no` and `grounded` comes back `false`. It calls
+Groq, so it is run by hand and not in CI. Result: **10 of 10 abstained**, with no
+API errors. Each reply said what the retrieved passages cover and that they do
+not contain the requested fact. Full output: `data/processed/abstention_pilot.json`.
+
+Read this with care:
+- The 10 questions are easy negatives. Each asks either about something outside
+  petroleum regulation (a passport, minimum wage, the best university) or for
+  current data a statute cannot contain (Brent price, last month's production,
+  the latest board decisions). None is an in-domain question whose answer is
+  nearly, but not quite, in the passages, which is where a model is most likely
+  to answer anyway. So 10/10 does not show that the false-answer rate is low.
+- It checks only the model's own `ANSWERABLE` line, not whether an answer given
+  elsewhere is correct or faithful to its passages.
+- The opposite error (wrongly refusing a question that has an answer) is not
+  measured yet, and this was a single run at temperature 0, not repeated.
+
 ## API
 - **`GET /health`** — `{"status", "chunks_loaded", "retriever"}`; `retriever`
   is `hybrid` or `bm25`.
@@ -274,6 +296,7 @@ python3 verify_gold.py     # optional: label checks on the 50 new questions
 
 python3 evaluate_retrieval.py bm25 dense hybrid   # sanity check: hybrid should print Hit Rate@5 96.1%
 python3 build_baseline.py bm25 dense hybrid       # records data/processed/baseline.json for the regression gate
+python3 eval_abstention.py                        # optional, needs GROQ_API_KEY: 10 Groq calls, checks abstention
 
 # API
 # Create a .env file with:
@@ -308,9 +331,10 @@ used about 250 MiB of memory (Render's free tier limit is 512 MB).
   98. The per-question gate is stricter: any new miss fails it. The first CI
   run on gold set v2 passed on the Ubuntu runner, but whether Windows and Linux
   always rank nearly tied scores identically is not proven. If a CI-only
-  failure ever appears, check for a tie first. The gate covers retrieval only;
-  answer faithfulness and abstention on unanswerable questions are not yet
-  measured.
+  failure ever appears, check for a tie first. The gate covers retrieval only.
+  Abstention was checked once, by hand, on 10 easy unanswerable questions (see
+  above); wrongly refused answerable questions and answer faithfulness are not
+  yet measured.
 - **Long chunks are only partly embedded.** 88 of the 478 chunks are over
   ~350 words, and `bge-small` reads roughly the first 512 tokens. The longest
   is PIA Section 318 (6,235 words, the Act's interpretation section). BM25

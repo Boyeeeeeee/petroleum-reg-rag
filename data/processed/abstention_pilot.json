@@ -1,0 +1,82 @@
+[
+  {
+    "id": "u01",
+    "q": "What is the current price of Brent crude oil?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, SEVENTH SCHEDULE, paragraph 8",
+    "answer": "The provided passages discuss how fiscal oil prices and royalties are determined under Nigerian law, but none of them state the current market price of Brent crude oil."
+  },
+  {
+    "id": "u02",
+    "q": "What is the minimum wage in Nigeria as of this year?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 20",
+    "answer": "The provided passages discuss petroleum regulations, decommissioning funds, and related financial provisions, but they do not contain any information about the minimum wage in Nigeria."
+  },
+  {
+    "id": "u03",
+    "q": "How does the U.S. Clean Air Act regulate gas flaring?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 2",
+    "answer": "The provided passages discuss Nigeria\u2019s 2023 Gas Flaring, Venting and Methane Emissions Regulations and do not contain any information about how the U.S. Clean Air Act regulates gas flaring."
+  },
+  {
+    "id": "u04",
+    "q": "What was NNPC Limited's most recent audited net profit?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 63",
+    "answer": "The provided passages describe the governance, objectives, audit requirements, and structural provisions of NNPC Limited under the Petroleum Industry Act, but they do not contain any information about NNPC Limited's audited net profit figures."
+  },
+  {
+    "id": "u05",
+    "q": "What is the process for renewing a Nigerian international passport?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 74",
+    "answer": "The provided passages relate exclusively to petroleum licensing, decommissioning, and related regulatory matters and contain no information about the process for renewing a Nigerian international passport."
+  },
+  {
+    "id": "u06",
+    "q": "Which university offers the best petroleum engineering program in Nigeria?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 66",
+    "answer": "The provided passages from the Petroleum Industry Act discuss objectives, licensing, and field development plans, but they contain no information about universities or petroleum engineering programs in Nigeria."
+  },
+  {
+    "id": "u07",
+    "q": "What decisions were made at NUPRC's most recent board meeting?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 63",
+    "answer": "The provided passages describe the duties, composition, and procedures of the NNPC board and related entities, but they do not contain any information about decisions made at the most recent board meeting of the Nigerian Upstream Petroleum Regulatory Commission (NUPRC)."
+  },
+  {
+    "id": "u08",
+    "q": "What is the current market price of a carbon credit from a flare monetisation project?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 3",
+    "answer": "The provided passages discuss flare elimination plans, gas pricing mechanisms, and regulatory definitions, but none contain information about the current market price of a carbon credit from a flare monetisation project."
+  },
+  {
+    "id": "u09",
+    "q": "How many barrels of oil did Nigeria produce last month?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 268",
+    "answer": "The provided passages discuss tax calculations, fiscal oil pricing, and royalty payment procedures, but they do not contain any data on the actual volume of oil produced by Nigeria in the last month."
+  },
+  {
+    "id": "u10",
+    "q": "What was the signature bonus paid in Nigeria's most recent marginal field bid round?",
+    "grounded": false,
+    "abstained": true,
+    "top1": "Petroleum Industry Act, 2021, Section 74",
+    "answer": "The provided passages describe the legal framework for signature bonuses and marginal field bidding but do not disclose the actual amount paid in the most recent marginal field bid round."
+  }
+]
