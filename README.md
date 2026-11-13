@@ -19,7 +19,8 @@ Free-tier hosting, so the first request after a period of inactivity can take ab
 - [x] Retrieval evaluation (`evaluate_retrieval.py`) — **hybrid Hit Rate@5: 96.1%, MRR: 0.882 on 102 questions** (BM25 baseline: 93.1%, 0.854). On the original 52 questions alone: hybrid 98.1%, 0.859
 - [x] Gold set label checks (`verify_gold.py`) — confirms every new label's citation exists, is unique, and that an anchor phrase from the answer appears in the cited chunk
 - [x] FastAPI service (`app.py`) — `/query` (raw retrieval) and `/ask` (LLM answer synthesis + grounding check)
-- [x] Tests (pytest) — 15 tests: API tests in `test_app.py` (three `/ask` tests call Groq for real, not mocks) and retrieval regression tests in `test_retrieval_eval.py`
+- [x] Per-question regression gate (`build_baseline.py`, `test_regression_gate.py`) — CI fails if a question the baseline found is now missed, or if MRR drops by more than 0.01
+- [x] Tests (pytest) — 20 tests: API tests in `test_app.py` (three `/ask` tests call Groq for real, not mocks), aggregate retrieval tests in `test_retrieval_eval.py` and the per-question gate in `test_regression_gate.py`
 - [x] Docker + deployment (Render, free tier)
 - [x] CI — GitHub Actions runs the offline tests (no Groq calls) on every push
 
@@ -43,6 +44,7 @@ data/raw/*.pdf
   -> gold_additions.py      (50 new questions, imported by merge_gold.py)
   -> merge_gold.py          -> data/processed/eval_set.json (102 + 10 items)
   -> verify_gold.py         -> label checks on the 50 new questions
+  -> build_baseline.py      -> data/processed/baseline.json (per-question ranks + data hashes)
   -> notebooks/dense_embeddings.ipynb (Colab)
                             -> data/processed/embeddings.npy + embeddings_meta.json
   -> bm25_retriever.py      -> sparse retrieval
@@ -70,6 +72,28 @@ flagged, and one label was replaced after that check because another section
 gave an identical answer. I also checked each label against the chunk text by
 hand. `merge_gold.py` generates `eval_set.json`; run it instead of
 `build_eval_set.py`, which on its own writes only the original 52 + 10.
+
+## Regression gate
+The aggregate gate in `test_retrieval_eval.py` (hybrid Hit Rate@5 of at least
+95%) can stay green while one question quietly breaks and another happens to
+start working. `test_regression_gate.py` closes that gap. `build_baseline.py`
+records, for every answerable question, the rank (1-5) at which each retriever
+found the expected chunk, or `null` for a miss, in `data/processed/baseline.json`.
+It also stores a hash of the chunk text and of the eval set content (parsed
+JSON, so Windows and Linux line endings give the same value). On every CI run
+the tests rebuild the rankings for BM25 and hybrid and fail if:
+
+- a question the baseline found is now a miss (a new miss), or
+- MRR drops by more than 0.01 (about two questions moving from rank 1 to rank 2), or
+- the chunks or the eval set no longer match the baseline.
+
+Questions the baseline already misses, including the Section 309 known failure,
+cannot trigger a new-miss failure, and fixing them never fails a test. To accept
+a deliberate change (new chunking, a retriever change, more questions), re-run
+`python3 build_baseline.py bm25 dense hybrid` and commit `baseline.json` in the
+same commit, with a message saying why the numbers moved. Dense is recorded in
+the baseline for comparison but is not gated on its own; hybrid contains it.
+BM25 is gated because `RETRIEVER_MODE=bm25` is a real deployment mode.
 
 ## Retrieval eval results
 Run `python3 merge_gold.py` and then `python3 evaluate_retrieval.py bm25 dense hybrid`
@@ -249,6 +273,7 @@ python3 verify_gold.py     # optional: label checks on the 50 new questions
 # embeddings.npy and embeddings_meta.json into data/processed/
 
 python3 evaluate_retrieval.py bm25 dense hybrid   # sanity check: hybrid should print Hit Rate@5 96.1%
+python3 build_baseline.py bm25 dense hybrid       # records data/processed/baseline.json for the regression gate
 
 # API
 # Create a .env file with:
@@ -278,11 +303,14 @@ used about 250 MiB of memory (Render's free tier limit is 512 MB).
   set would make the retriever comparison meaningful at the level of a
   percentage point, and the 24 questions that name their unit partly test
   label matching.
-- **The CI gate has little slack.** `test_retrieval_eval.py` requires hybrid
-  Hit Rate@5 of at least 95%, which is 97 of 102; hybrid currently gets 98.
-  One flipped ranking would fail CI. It is also unchecked whether Windows
-  and the Ubuntu CI runner produce identical rankings when scores are nearly
-  tied. The gate checks only the aggregate rate, not individual questions.
+- **The aggregate CI gate has little slack.** `test_retrieval_eval.py` requires
+  hybrid Hit Rate@5 of at least 95%, which is 97 of 102; hybrid currently gets
+  98. The per-question gate is stricter: any new miss fails it. The first CI
+  run on gold set v2 passed on the Ubuntu runner, but whether Windows and Linux
+  always rank nearly tied scores identically is not proven. If a CI-only
+  failure ever appears, check for a tie first. The gate covers retrieval only;
+  answer faithfulness and abstention on unanswerable questions are not yet
+  measured.
 - **Long chunks are only partly embedded.** 88 of the 478 chunks are over
   ~350 words, and `bge-small` reads roughly the first 512 tokens. The longest
   is PIA Section 318 (6,235 words, the Act's interpretation section). BM25
