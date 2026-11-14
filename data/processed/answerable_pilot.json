@@ -1,0 +1,222 @@
+[
+  {
+    "id": "e020",
+    "q": "If another law conflicts with the Petroleum Industry Act, which prevails, and what is the notable exception?",
+    "expected": "Petroleum Industry Act, 2021, Section 309",
+    "baseline_hybrid_rank": null,
+    "grounded": false,
+    "retrieved": false,
+    "cited_expected": null,
+    "outcome": "SAFE MISS: section not retrieved and the model refused",
+    "answer": "The provided passages do not contain any statement indicating which law prevails in the event of a conflict between the Petroleum Industry Act and another law, nor do they mention any notable exception to such a rule."
+  },
+  {
+    "id": "g001",
+    "q": "What qualifications must the Secretary of the Nigerian Upstream Petroleum Regulatory Commission have?",
+    "expected": "Petroleum Industry Act, 2021, Section 23",
+    "baseline_hybrid_rank": null,
+    "grounded": false,
+    "retrieved": false,
+    "cited_expected": null,
+    "outcome": "SAFE MISS: section not retrieved and the model refused",
+    "answer": "The provided passages specify the qualifications for the Secretary of the Midstream and Downstream Petroleum Regulatory Authority (a legal practitioner with at least 10 years post\u2011qualification experience) but contain no information on the qualifications required for the Secretary of the Nigerian Upstream Petroleum Regulatory Commission."
+  },
+  {
+    "id": "g007",
+    "q": "What notice must a midstream or downstream licence holder with ongoing operations give before ceasing activities, unless the licence says otherwise?",
+    "expected": "Petroleum Industry Act, 2021, Section 119",
+    "baseline_hybrid_rank": null,
+    "grounded": false,
+    "retrieved": false,
+    "cited_expected": null,
+    "outcome": "SAFE MISS: section not retrieved and the model refused",
+    "answer": "The provided passages (Sections\u202f125,\u202f120,\u202f176,\u202f115, and\u202f127 of the Petroleum Industry Act) do not contain any provision specifying the notice a midstream or downstream licence holder must give before ceasing operations, except where the licence itself may provide otherwise. Consequently, the question cannot be answered from the given material."
+  },
+  {
+    "id": "g018",
+    "q": "Can a company that cannot file its hydrocarbon tax returns on time get more time, and who grants it?",
+    "expected": "Petroleum Industry Act, 2021, Section 281",
+    "baseline_hybrid_rank": null,
+    "grounded": true,
+    "retrieved": false,
+    "cited_expected": "short",
+    "outcome": "CHECK: section NOT retrieved but the model answered anyway",
+    "answer": "The Act provides that if a company fails to file its self\u2011assessment within the time limited by section\u202f277, or fails to comply with a notice under sections\u202f278 or\u202f279, the Service may still act \u201cwithin any extended time provided in section\u202f281 of this Act\u201d\u202f[Petroleum Industry Act, 2021, Section\u202f282(3)]. This shows that an extension of time can be granted. However, the passages supplied do not state explicitly which authority grants the extension; they only refer to the existence of an \u201cextended time\u201d under section\u202f281."
+  },
+  {
+    "id": "e006",
+    "q": "What law governs compensation for land acquired for midstream and downstream petroleum operations?",
+    "expected": "Petroleum Industry Act, 2021, Section 115",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The compensation for land acquired for midstream and downstream petroleum operations is governed by the **Land Use Act**, as required by Section\u202f115 of the Petroleum Industry Act,\u202f2021, which mandates compliance with the provisions of the Land Use Act for such compensation\u3010Petroleum Industry Act, 2021, Section 115\u3011."
+  },
+  {
+    "id": "e018",
+    "q": "Name one ground on which a licence or permit may be revoked under Section 120.",
+    "expected": "Petroleum Industry Act, 2021, Section 120",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "One ground for revocation is that the holder becomes insolvent, bankrupt, enters into an agreement or composition with its creditors, or goes into liquidation (Section\u202f120(a))\u3010Petroleum Industry Act, 2021, Section 120\u3011."
+  },
+  {
+    "id": "e029",
+    "q": "Name one offence under Section 230 relating to information given to the Commission or Authority.",
+    "expected": "Petroleum Industry Act, 2021, Section 230",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "One offence under Section\u202f230 is furnishing a false or incomplete return to the Commission or Authority (paragraph\u202f(b))\u3010Petroleum Industry Act, 2021, Section 230\u3011."
+  },
+  {
+    "id": "e035",
+    "q": "How is the value of blended crude oil, condensates, or natural gas liquids determined?",
+    "expected": "Petroleum Royalty Regulations, 2022, Regulation 28",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The value of crude oil, condensates or natural gas liquids that have been blended is taken as the value at the measurement points where the streams are metered, and then adjusted for transport costs incurred within Nigeria. Before blending, each component must be measured by the lessee to determine its volume, quality and value.\u202f[Petroleum Royalty Regulations, 2022, Regulation\u202f28\u202f(1)\u2013(2)]"
+  },
+  {
+    "id": "e038",
+    "q": "What may a lessee do if insufficient natural gas is produced in a PML for production or injection needs?",
+    "expected": "Petroleum Royalty Regulations, 2022, Regulation 10",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "If the PML does not produce enough natural gas for production or injection, the lessee is permitted either to purchase the needed natural gas or to transfer natural gas from another PML for that purpose\u3010Petroleum Royalty Regulations, 2022, Regulation 10\u3011."
+  },
+  {
+    "id": "e040",
+    "q": "How does Regulation 47 define 'arm's length'?",
+    "expected": "Petroleum Royalty Regulations, 2022, Regulation 47",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "Regulation\u202f47 of the Petroleum Royalty Regulations,\u202f2022 provides that \u201carm\u2019s length\u201d means the relationship that exists between two or more persons, where none of such persons exerts or is in a position to exert significant influence on any of the other persons having regard to all relevant factors\u3010Petroleum Royalty Regulations, 2022, Regulation 47\u3011."
+  },
+  {
+    "id": "e047",
+    "q": "How often must a producer of gas submit its daily flaring and venting log to the Commission?",
+    "expected": "Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 20",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "A producer of gas must submit its daily flaring and venting log to the Commission on a **monthly basis**, with the log to be filed **within 21\u202fdays after the end of each month**\u3010Gas Flaring, Venting and Methane Emissions (Prevention of Waste and Pollution) Regulations, 2023, Regulation 20\u3011."
+  },
+  {
+    "id": "e051",
+    "q": "What is the administrative penalty for a licensee who fails to submit a decommissioning and abandonment plan on time?",
+    "expected": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 24",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "short",
+    "outcome": "GOOD (short citation): answered, expected section named without the document title",
+    "answer": "The Regulations provide that a licensee or lessee who does not submit a decommissioning and abandonment plan within the prescribed time is liable to an administrative penalty of **US\u202f$500,000 for each year of non\u2011compliance**, payable to the Commission (or the licence/lease may be revoked)\u3010Regulation\u202f24(1)\u3011."
+  },
+  {
+    "id": "g002",
+    "q": "What must NNPC Limited's Board do if its external auditor cannot confirm the financial statements fairly represent the company?",
+    "expected": "Petroleum Industry Act, 2021, Section 62",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "If the external auditor is unable to provide the required assurance that the financial statements fairly represent NNPC Limited, the Board must **immediately convene an extraordinary general meeting of the company**, **notify the shareholders**, and **consider any action that may be necessary** in that regard\u3010Petroleum Industry Act, 2021, Section 62\u3011."
+  },
+  {
+    "id": "g004",
+    "q": "What is the maximum duration of a petroleum prospecting licence for deep offshore acreage, and how is it split?",
+    "expected": "Petroleum Industry Act, 2021, Section 77",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The Act provides that a petroleum prospecting licence for deep offshore (and frontier) acreage may be granted for **a maximum of 10\u202fyears**, which is **divided into an initial exploration period of five years and an optional extension period of five years**\u3010Petroleum Industry Act, 2021, Section 77\u3011."
+  },
+  {
+    "id": "g013",
+    "q": "Who gives the Board of Trustees the matrix for sharing the trust fund among host communities?",
+    "expected": "Petroleum Industry Act, 2021, Section 245",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The matrix for sharing the trust fund among host communities is provided to the Board of Trustees by the **settlor**\u3010Petroleum Industry Act, 2021, Section 245\u3011."
+  },
+  {
+    "id": "g014",
+    "q": "What must the Board of Trustees do with the reserve fund as it accrues?",
+    "expected": "Petroleum Industry Act, 2021, Section 246",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The Board of Trustees must **engage a fund manager to invest the reserve fund as the fund accrues** and must **manage the interest and profits from that investment, allocating the gains in accordance with section\u202f244** of the Act\u3010Petroleum Industry Act, 2021, Section 246\u3011."
+  },
+  {
+    "id": "g016",
+    "q": "What hydrocarbon tax percentage applies to crude oil profits for onshore and shallow water prospecting licences selected on conversion?",
+    "expected": "Petroleum Industry Act, 2021, Section 267",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "The hydrocarbon tax rate for crude oil profits on onshore and shallow\u2011water petroleum prospecting licences that are selected on conversion (under section\u202f93(6)(a) and\u202f(7)(a)) is **15\u202f%** of the profit\u3010Petroleum Industry Act, 2021, Section 267\u3011."
+  },
+  {
+    "id": "g017",
+    "q": "If a petroleum company transfers a substantial part of its assets to avoid tax, who can the unpaid tax be recovered from?",
+    "expected": "Petroleum Industry Act, 2021, Section 275",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "If a petroleum company transfers a substantial part of its assets to avoid paying income tax or hydrocarbon tax, the unpaid tax may be sued for and recovered from the person to whom the assets were transferred, i.e., the transferee, in the same way as any other tax recovery under section\u202f294 of the Act\u3010Petroleum Industry Act, 2021, Section 275\u3011."
+  },
+  {
+    "id": "g027",
+    "q": "How is production allocated for a field straddling several mining leases under a unitization agreement, for royalty purposes?",
+    "expected": "Petroleum Royalty Regulations, 2022, Regulation 9",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "full",
+    "outcome": "GOOD: answered and cited the expected section",
+    "answer": "Under a unitization agreement, the allocation of production from a field that spans two or more petroleum mining leases (PMLs) must be specified in the unitization agreement itself. Each lessee is then responsible for paying royalty on the volume of production that has been allocated to them, unless the agreement provides an alternative methodology that has been approved by the Commission\u3010Petroleum Royalty Regulations, 2022, Regulation 9\u3011."
+  },
+  {
+    "id": "g050",
+    "q": "Who takes on decommissioning liability when an interest in a licence or lease is assigned?",
+    "expected": "Nigeria Upstream Petroleum Decommissioning and Abandonment Regulations, 2023, Regulation 23",
+    "baseline_hybrid_rank": 1,
+    "grounded": true,
+    "retrieved": true,
+    "cited_expected": "short",
+    "outcome": "GOOD (short citation): answered, expected section named without the document title",
+    "answer": "When an interest in a licence or lease is assigned (or otherwise transferred), the de\u2011commissioning and abandonment liability passes to the transferee.  Regulation\u202f23 provides that the \u201cproportionate liability \u2026 shall be deemed to be attached to the property transferred to the transferee\u201d\u202f(B\u202f1340).  Likewise, Regulation\u202f17 states that for an assignment \u201cthe obligation shall be on the assignee to the extent that the assignee has assumed obligations\u201d\u202f(17\u2011(1)(d)).  Thus, the assignee (or transferee) assumes the de\u2011commissioning liability, proportionate to the interest acquired and to the extent they have taken on the obligations."
+  }
+]
