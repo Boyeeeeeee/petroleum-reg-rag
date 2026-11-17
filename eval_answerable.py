@@ -8,10 +8,13 @@ import unicodedata
 from pathlib import Path
 
 PROCESSED = Path("data/processed")
-OUT_PATH = PROCESSED / "answerable_pilot.json"
+ALL = "--all" in sys.argv
+OUT_PATH = PROCESSED / ("answerable_full.json" if ALL else "answerable_pilot.json")
 N_HITS = 16
 SEED = 0
 PAUSE_SECONDS = 2
+RETRY_PAUSE_SECONDS = 30
+MAX_RETRIES = 3
 
 
 def _clean(text):
@@ -44,6 +47,28 @@ def classify(retrieved, grounded, cited):
     return "CHECK: section NOT retrieved but the model answered anyway"
 
 
+def summarise(rows):
+    ok = [r for r in rows if "error" not in r and "answer" in r]
+    print("\n=== Summary ===")
+    labels = sorted({r["outcome"].split(":")[0] for r in ok})
+    for label in labels:
+        print(f"{label}: {sum(r['outcome'].split(':')[0] == label for r in ok)}")
+    ret = [r for r in ok if r["retrieved"]]
+    miss = [r for r in ok if not r["retrieved"]]
+    good = lambda r: r["outcome"].startswith("GOOD")
+    print(f"\nExpected section retrieved: {len(ret)}")
+    print(f"  answered {sum(r['grounded'] for r in ret)}, refused {sum(not r['grounded'] for r in ret)}, "
+          f"answered and named the expected section {sum(good(r) for r in ret)}")
+    print(f"Expected section NOT retrieved: {len(miss)}")
+    print(f"  refused {sum(not r['grounded'] for r in miss)}, answered anyway {sum(r['grounded'] for r in miss)}")
+    if not ALL:
+        print("(pilot sample is hand-picked: these counts are not rates)")
+    print(f"Errors (not counted): {len(rows) - len(ok)}")
+    to_check = [r["id"] for r in ok if r["outcome"].startswith("CHECK")]
+    if to_check:
+        print("To read by hand (CHECK):", ", ".join(to_check))
+
+
 def rescore():
     rows = json.load(open(OUT_PATH))
     for row in rows:
@@ -52,15 +77,27 @@ def rescore():
         cited = citation_match(row["answer"], row["expected"])
         row["cited_expected"] = cited
         row["outcome"] = classify(row["retrieved"], row["grounded"], cited)
-        print(f"{row['id']}: {row['outcome']}")
-        if row["outcome"].startswith("CHECK"):
+        if row["outcome"].startswith(("CHECK", "WRONG")):
             odd = sorted({hex(ord(c)) for c in row["answer"] if ord(c) > 127})
-            print(f"    Q: {row['q']}\n    expected: {row['expected']}\n    FULL ANSWER: {row['answer']}\n    non-ASCII characters in answer: {odd}\n")
-    ok = [r for r in rows if "error" not in r]
-    print("\n=== Summary (re-scored) ===")
-    for label in sorted({r["outcome"].split(":")[0] for r in ok}):
-        print(f"{label}: {sum(r['outcome'].split(':')[0] == label for r in ok)}")
+            print(f"{row['id']}: {row['outcome']}\n    Q: {row['q']}\n    expected: {row['expected']}\n"
+                  f"    FULL ANSWER: {row['answer']}\n    non-ASCII characters in answer: {odd}\n")
+        elif not ALL:
+            print(f"{row['id']}: {row['outcome']}")
+    summarise(rows)
     json.dump(rows, open(OUT_PATH, "w"), indent=2)
+
+
+def ask_with_retry(app, HTTPException, question):
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            return app.ask(app.QueryRequest(question=question, top_k=5))
+        except HTTPException as e:
+            if e.status_code == 502 and "RateLimit" in str(e.detail) and attempt < MAX_RETRIES:
+                wait = RETRY_PAUSE_SECONDS * (attempt + 1)
+                print(f"    rate limited, waiting {wait}s then retrying...")
+                time.sleep(wait)
+                continue
+            raise
 
 
 def main():
@@ -69,18 +106,30 @@ def main():
     import app
 
     baseline = json.load(open(PROCESSED / "baseline.json"))
-    items = {x["id"]: x for x in json.load(open(PROCESSED / "eval_set.json"))["answerable"]}
+    eval_items = json.load(open(PROCESSED / "eval_set.json"))["answerable"]
+    items = {x["id"]: x for x in eval_items}
     ranks = baseline["retrievers"]["hybrid"]["ranks"]
-    misses = sorted(k for k, v in ranks.items() if v is None)
-    hits = sorted(k for k, v in ranks.items() if v is not None)
-    chosen = misses + sorted(random.Random(SEED).sample(hits, N_HITS))
+    if ALL:
+        chosen = [x["id"] for x in eval_items]
+    else:
+        misses = sorted(k for k, v in ranks.items() if v is None)
+        hits = sorted(k for k, v in ranks.items() if v is not None)
+        chosen = misses + sorted(random.Random(SEED).sample(hits, N_HITS))
+
+    done = {}
+    if ALL and OUT_PATH.exists():
+        done = {r["id"]: r for r in json.load(open(OUT_PATH)) if "answer" in r}
+        print(f"Resuming: {len(done)} questions already answered in {OUT_PATH}")
 
     rows = []
     for i, qid in enumerate(chosen, start=1):
+        if qid in done:
+            rows.append(done[qid])
+            continue
         item = items[qid]
         row = {"id": qid, "q": item["q"], "expected": item["citation"], "baseline_hybrid_rank": ranks[qid]}
         try:
-            resp = app.ask(app.QueryRequest(question=item["q"], top_k=5))
+            resp = ask_with_retry(app, HTTPException, item["q"])
             retrieved = any(p.citation == item["citation"] for p in resp.passages_used)
             cited = citation_match(resp.answer, item["citation"])
             row.update(grounded=resp.grounded, retrieved=retrieved, cited_expected=cited,
@@ -90,18 +139,13 @@ def main():
         except Exception as e:
             row["error"] = f"{type(e).__name__}: {e}"
         rows.append(row)
-        print(f"[{i}/{len(chosen)}] {qid} (hybrid rank {ranks[qid]}) -> {row.get('outcome') or row['error']}")
-        print(f"    Q: {item['q']}")
-        print(f"    expected: {item['citation']}")
-        if "answer" in row:
-            print(f"    A: {row['answer'][:300].replace(chr(10), ' ')}")
+        print(f"[{i}/{len(chosen)}] {qid} -> {row.get('outcome') or row['error']}")
+        if not ALL and "answer" in row:
+            print(f"    Q: {item['q']}\n    expected: {item['citation']}\n    A: {row['answer'][:300].replace(chr(10), ' ')}")
+        json.dump(rows, open(OUT_PATH, "w"), indent=2)  # save after every question
         time.sleep(PAUSE_SECONDS)
 
-    ok = [r for r in rows if "error" not in r]
-    print("\n=== Summary ===")
-    for label in sorted({r["outcome"].split(":")[0] for r in ok}):
-        print(f"{label}: {sum(r['outcome'].split(':')[0] == label for r in ok)}")
-    print(f"Errors (not counted): {len(rows) - len(ok)}")
+    summarise(rows)
     json.dump(rows, open(OUT_PATH, "w"), indent=2)
     print(f"Wrote {OUT_PATH}")
 

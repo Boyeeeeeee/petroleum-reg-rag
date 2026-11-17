@@ -19,7 +19,7 @@ Free-tier hosting, so the first request after a period of inactivity can take ab
 - [x] Retrieval evaluation (`evaluate_retrieval.py`) — **hybrid Hit Rate@5: 96.1%, MRR: 0.882 on 102 questions** (BM25 baseline: 93.1%, 0.854). On the original 52 questions alone: hybrid 98.1%, 0.859
 - [x] Gold set label checks (`verify_gold.py`) — confirms every new label's citation exists, is unique, and that an anchor phrase from the answer appears in the cited chunk
 - [x] Abstention pilot (`eval_abstention.py`) — `/ask` refused all 10 unanswerable questions (10/10); see the caveats in its section below
-- [x] Answerable-question pilot (`eval_answerable.py`) — 20 questions through `/ask`: all 16 where retrieval found the section were answered and cited it; 3 of the 4 retrieval misses were refused; see the caveats in its section below
+- [x] Answerable-question check (`eval_answerable.py --all`) — all 102 answerable questions through `/ask`: all 98 where retrieval found the section were answered (97 name the section); 3 of the 4 retrieval misses were refused; see the caveats in its section below
 - [x] FastAPI service (`app.py`) — `/query` (raw retrieval) and `/ask` (LLM answer synthesis + grounding check)
 - [x] Per-question regression gate (`build_baseline.py`, `test_regression_gate.py`) — CI fails if a question the baseline found is now missed, or if MRR drops by more than 0.01
 - [x] Tests (pytest) — 20 tests: API tests in `test_app.py` (three `/ask` tests call Groq for real, not mocks), aggregate retrieval tests in `test_retrieval_eval.py` and the per-question gate in `test_regression_gate.py`
@@ -48,7 +48,7 @@ data/raw/*.pdf
   -> verify_gold.py         -> label checks on the 50 new questions
   -> build_baseline.py      -> data/processed/baseline.json (per-question ranks + data hashes)
   -> eval_abstention.py     -> data/processed/abstention_pilot.json (calls Groq; run by hand, not in CI)
-  -> eval_answerable.py     -> data/processed/answerable_pilot.json (calls Groq; run by hand, not in CI)
+  -> eval_answerable.py     -> data/processed/answerable_full.json (and answerable_pilot.json; calls Groq, run by hand, not in CI)
   -> notebooks/dense_embeddings.ipynb (Colab)
                             -> data/processed/embeddings.npy + embeddings_meta.json
   -> bm25_retriever.py      -> sparse retrieval
@@ -253,45 +253,57 @@ Read this with care:
 - The opposite error (wrongly refusing a question that has an answer) is not
   measured yet, and this was a single run at temperature 0, not repeated.
 
-## Answerable-question pilot (20 questions)
+## Answerable-question check (all 102 questions)
 The abstention pilot tests one direction only. `eval_answerable.py` tests the
 other: does `/ask` answer questions that do have an answer, and from the right
-section? The sample is the 4 questions hybrid retrieval misses in `baseline.json`
-plus 16 it finds (fixed seed, so the sample repeats). For each question it records
-whether the expected section was among the retrieved passages, whether the model
-judged them answerable, and whether the answer names the expected section. It
-calls Groq, so it is run by hand and not in CI; `--rescore` re-scores the saved
-answers without calling Groq. Full output: `data/processed/answerable_pilot.json`.
+section? `--all` sends every answerable question through `/ask` (hybrid retrieval,
+top 5, temperature 0): about 100 Groq calls, saved after every question so a
+stopped run can be resumed, with a pause and retry on rate-limit errors. For each
+question it records whether the expected section was among the retrieved passages,
+whether the model judged them answerable, and whether the answer names the
+expected section. It calls Groq, so it is run by hand and not in CI. `--rescore`
+re-scores the saved answers without calling Groq. A 20-question pilot
+(`answerable_pilot.json`) came first and was used to debug the citation matcher.
+Full output: `data/processed/answerable_full.json`.
 
-| Outcome | Count |
+| Outcome (102 questions) | Count |
 |---|---|
-| Retrieved, answered, expected section cited (14 full label, 2 shortened, e.g. "Regulation 24") | 16 |
-| Not retrieved, model refused | 3 (Section 309, Section 23, Section 119) |
-| Not retrieved, model answered anyway | 1 (Section 281) |
-| Retrieved but wrongly refused | 0 |
+| Section retrieved, answered, answer names the expected section (79 full label, 18 shortened, e.g. "Regulation 24") | 97 |
+| Section retrieved, answered, but the only citation is a gazette page marker, not a section label | 1 |
+| Section retrieved but the model refused | 0 |
+| Section not retrieved, model refused | 3 (Section 309, Section 23, Section 119) |
+| Section not retrieved, model answered anyway | 1 (Section 281) |
 
-- **Retrieved questions:** all 16 were answered, and the answers agree with the
-  chunk text. The script does not judge correctness; the answers were read by
-  eye (the full text for four, the first 300 characters for the rest).
-- **Retrieval misses mostly fail safe.** For three of the four, the model said
-  the passages did not contain the answer instead of guessing. For the Commission
-  Secretary question it even described the near-identical Authority Secretary rule
-  and said that was not what was asked.
-- **The one answer without the right passage** (hybrid retrieved Section 282,
-  not 281) was partial and honest: the model quoted Section 282's reference to
-  "extended time provided in section 281", concluded an extension can be
-  granted, and said the passages did not say who grants it. It did not invent an
-  answer, but it did not answer "who grants it" either.
-- **Citation matching had to be loosened.** The model sometimes drops the
-  document title ("Regulation 24(1)") and its output contains narrow non-breaking
-  spaces, which broke a plain string match. The matcher now normalises Unicode
-  spaces and hyphens and accepts the short form.
-- **Noise visible in an answer:** a gazette page footer ("B 1340") leaked from
-  the chunk text into one reply.
+- **No wrong refusals.** All 98 questions where retrieval found the right section
+  were answered.
+- **Retrieval misses mostly fail safe.** For three of the four, the model said the
+  passages did not contain the answer instead of guessing. For the Commission
+  Secretary question it described the near-identical Authority Secretary rule and
+  said that was not what was asked.
+- **The one answer without the right passage** (retrieval returned Section 282, not
+  281) was partial and honest: it quoted Section 282's reference to "extended time
+  provided in section 281", concluded an extension can be granted, and said the
+  passages did not say who grants it. It did not answer "who grants it".
+- **A page footer was cited instead of a section.** For the question on whether
+  the Commission's installations database is public, the answer quotes
+  Regulation 18 correctly, but its only citation is "【B 1336】", the gazette page
+  footer. A second answer contained "(B 1340)" next to a proper citation. Page
+  footers are part of the chunk text, so the model can copy them. Stripping them
+  would change the chunk text and require re-embedding in Colab, so it has not
+  been done.
+- **Citation matching had to be loosened.** The model sometimes drops the document
+  title ("Regulation 24(1)"), and its output contains narrow non-breaking spaces,
+  which broke a plain string match. The matcher now normalises Unicode spaces and
+  hyphens and accepts the short form.
 
-Read this with care: it is 20 hand-picked questions (4 chosen because retrieval
-fails), a single run at temperature 0, so the counts are not rates. Correctness
-is judged by reading, and citation matching is string-based.
+Read this with care:
+- Naming the expected section is not the same as being correct. The script does not
+  judge answers. Roughly 20 of the 102 answers have been read against the chunk
+  text; the other ~80 are not checked for correctness.
+- Citation matching is string-based, and this was a single full run. Answers are
+  not word-for-word repeatable even at temperature 0: the Section 281 answer was
+  worded differently in the pilot and in the full run, with the same substance, so
+  counts could shift slightly on a re-run.
 
 ## API
 - **`GET /health`** — `{"status", "chunks_loaded", "retriever"}`; `retriever`
@@ -339,7 +351,7 @@ python3 verify_gold.py     # optional: label checks on the 50 new questions
 python3 evaluate_retrieval.py bm25 dense hybrid   # sanity check: hybrid should print Hit Rate@5 96.1%
 python3 build_baseline.py bm25 dense hybrid       # records data/processed/baseline.json for the regression gate
 python3 eval_abstention.py                        # optional, needs GROQ_API_KEY: 10 Groq calls, checks abstention
-python3 eval_answerable.py                        # optional, needs GROQ_API_KEY: 20 Groq calls; add --rescore to re-score saved answers without Groq
+python3 eval_answerable.py --all                  # optional, needs GROQ_API_KEY: ~100 Groq calls, resumable; add --rescore to re-score saved answers without Groq
 
 # API
 # Create a .env file with:
@@ -375,10 +387,10 @@ used about 250 MiB of memory (Render's free tier limit is 512 MB).
   run on gold set v2 passed on the Ubuntu runner, but whether Windows and Linux
   always rank nearly tied scores identically is not proven. If a CI-only
   failure ever appears, check for a tie first. The gate covers retrieval only.
-  Abstention (10 easy unanswerable questions) and
-  answering (20 questions) were each checked once by hand-run pilots (see
-  above). There is no automated answer-correctness or faithfulness check yet,
-  and no large-sample rate for either.
+  Abstention was checked once on 10 easy
+  unanswerable questions, and answering once across all 102 answerable questions
+  (see above). Both are single hand-run checks. There is no automated
+  answer-correctness or faithfulness check yet; most answers have not been read.
 - **Long chunks are only partly embedded.** 88 of the 478 chunks are over
   ~350 words, and `bge-small` reads roughly the first 512 tokens. The longest
   is PIA Section 318 (6,235 words, the Act's interpretation section). BM25
@@ -401,7 +413,8 @@ used about 250 MiB of memory (Render's free tier limit is 512 MB).
   Section 23 miss is probably an instance of this; it has not been diagnosed.
 - **Marginal notes and page footers are interleaved with body text** in some
   chunks (visible in Section 309: "Consequential amendments.", "Cap. C23, LFN,
-  2004."; a footer such as "B 1340" once appeared in an answer), which adds
-  noise to both indexes.
+  2004."). Footers such as "B 1340" leaked into two answers, and in one
+  ("B 1336") replaced the section citation. Cleaning them is a candidate fix,
+  but it changes the chunk text, so it needs re-embedding and a new baseline.
 - **Free-tier cold starts.** The service sleeps when idle, so the first
   request after a pause can be slow.
